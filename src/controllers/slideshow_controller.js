@@ -1,20 +1,18 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-    static targets = [ "slide" ]
-    static values = { index: Number }
-
-  initialize() {
-    this.showCurrentSlide()
-  }
+  static targets = [ "slide" ]
+  static values = { index: Number }
 
   next() {
     this.indexValue++
-    this.showCurrentSlide()
   }
 
   previous() {
     this.indexValue--
+  }
+
+  indexValueChanged() {
     this.showCurrentSlide()
   }
 
